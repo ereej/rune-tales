@@ -1,0 +1,51 @@
+.hidden-searchbar-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon-button {
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  color: #232323;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  right: 10px; /* Adjust this based on your layout */
+  pointer-events: none; /* Prevent clicks on the icon button */
+}
+
+.search-input {
+  width: 0;
+  height: 45px;
+  padding: 0 1rem;
+  padding-left: 35px; /* Space for the icon */
+  border: 1px solid #232323;
+  border-radius: 20px;
+  outline: none;
+  background-color: white;
+  color: black;
+  opacity: 0;
+  visibility: hidden;
+  transition: width 0.3s ease, opacity 0.3s ease, visibility 0s linear 0.3s;
+}
+
+.hidden-searchbar-container:hover .search-input {
+  width: 200px;
+  opacity: 1;
+  visibility: visible;
+  padding: 0 1rem;
+  transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+.hidden-searchbar-container:not(:hover) .search-input {
+  visibility: hidden;
+  opacity: 0;
+  width: 0;
+}
